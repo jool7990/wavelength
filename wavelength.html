@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="help-modal">HOW TO PLAY</h1>
+            <h2><li class="help-modal">There are 5 images at the top of the screen, each one has been assigned a value 1-20</li></h2>
+            <h2><li class="help-modal">1 being one of the best things in all history of things, 20 being one of the worst.</li></h2>
+            <h2><li class="help-modal">Enter a guess for each image on where you think that thing falls on the that scale</li></h2>
+            <h2><li class="help-modal">If you are within 2 numbers of that object the square will highlight yellow, if it is correct the square will be green</li></h2>
+            <h2><li class="help-modal">The number to the right of the square shows you what the average wavelength for all items is</li></h2>
+            <h2><li class="help-modal">How many guesses will it take you to guess each item right?</li></h2>
+        </div>
+    </div>
+    
+    <!-- Add this anywhere within the body, usually near the end -->
+    <div id="stats-modal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Stats</h2>
+        <p id="attempts">Coming Soon</p>
+        </div>
+    </div>
+  
+    <nav>
+        <div class="title">Wavelength</div> <!-- Added title -->
+        <div class="nav-right">
+            <i id="theme-icon" data-feather="moon" class="icon" onclick="toggleTheme()"></i>
+            <i id="stats-icon" data-feather="bar-chart-2" class="icon" onclick="openStatsModal()"></i>
+            <i data-feather="help-circle" class="icon" onclick="openHelpModal()"></i>
+        </div>        
+    </nav>    
+    
+    <div class="grid-container">
+        <div class="row">
+            <div class="cell">
+                <div class="cell-inner">
+                    <img src="./images/burger.jpg" alt="Burger">
+                    <p class="img-alt-text">Burger</p>  
+                </div>
+            </div>
+            <div class="cell">
+                <img src="./images/HW.jpg" alt="Homework">
+                <p class="img-alt-text">Homework</p>  
+            </div>
+            <div class="cell">
+                <img src="./images/iPhone.jpg" alt="iPhone">
+                <p class="img-alt-text">iPhone</p>  
+            </div>
+            <div class="cell">
+                <img src="./images/lambo.jpg" alt="Lambo">
+                <p class="img-alt-text">Lambo</p>  
+            </div>
+            <div class="cell">
+                <img src="./images/veggiemite.jpg" alt="Veggiemite">
+                <p class="img-alt-text">Veggiemite</p>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+            <div class="cell">
+                <input type="number" min="1" max="20">
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
