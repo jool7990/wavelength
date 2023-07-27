@@ -2,31 +2,51 @@ body, input {
     font-family: 'Jost', sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        margin-top: 10%;
+    }
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 105vh;
-    margin: 0;
-    padding: 0;
+    height: 100%;
     background-color: #FAF9F6;
-    overflow: hidden; 
+    overflow: auto; 
     position: relative;
 }
 
+.dark-theme {
+    background-color: #222;
+    color: #fff;
+}
+
 .grid-container {
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    width: 35%; /* Adjust to your preference */
-    height: 90%; /* Adjust to your preference */
+    width: 90%; 
+    height: 60%; 
     box-sizing: border-box;
+}
+
+.dark-theme .grid-container {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%; 
+    height: 60%; 
+    box-sizing: border-box;
+    background-color: #222;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: calc(55em / 7);
+    height: 60%;
 }
 
 .cell {
@@ -41,46 +61,8 @@ body {
     width: 100%; 
 }
 
-.average {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    width: 10%; 
-}
-
-.cell img {
-    margin-top: .1em;
-    border: .5vh solid #ddddddc7;
-    max-width: 6em;
-    max-height: 6em;
-    object-fit: contain;
-    border-radius: 4px;
-    padding: 0em;
-    box-sizing: border-box;
-}
-
-.cell img:hover {
-    transform: scale(3); /* Adjust as needed */
-    transition: transform .2s; /* Animation */
-}
-
-.cell input {
-    margin-top: .1em;
-    width: 90%;
-    height: 90%;
-    border: .5vh solid #ddddddc7;
-    border-radius: 4px;
-    padding: .1em;
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 4em;
-}
-
 .dark-theme .cell {
-    background-color: #727272; 
-    color: #222;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,21 +71,33 @@ body {
     border: 0.0000000001em solid #222;
     padding: 0.0000000001em;
     box-sizing: border-box;
-    width: 20%;
+    width: 100%; 
 }
 
-.dark-theme .cell input {
-    background-color: #585858;
+.cell img {
+    padding-top: 10%;
+    max-width: 60%;
+    max-height: 60%;
+    border-radius: 4%;
+    box-sizing: border-box;
+}
+
+.cell input {
     margin-top: .1em;
     width: 90%;
     height: 90%;
-    color: white;
-    border: .5vh solid #7a7a7a;
+    border: .5vh solid #ddddddc7;
     border-radius: 4px;
-    padding: .1em;
     box-sizing: border-box;
     text-align: center;
     font-size: 4em;
+    color: #222;
+}
+
+.dark-theme .cell input {
+    background-color: #222;
+    color: #fff;
+    border: .5vh solid #7a7a7a;
 }
 
 .grid-item {
@@ -111,31 +105,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #FAF9F6;
     border: 0px solid #ddd;
     padding: 0vh;
     box-sizing: border-box;
 }
 
 .dark-theme .grid-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #727272;
-    border: 0px solid #ddd;
-    padding: 0vh;
-    box-sizing: border-box;
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
 }
 
-.dark-theme .grid-container {
-    display: flex;
-    flex-direction: column;
-    width: 37em;
-    height: 52em;
-    box-sizing: border-box;
-    background-color: #222;
-}
+/* Repeated for each CSS rule */
 
 .grid-item img {
     max-width: 100%;
@@ -145,28 +126,21 @@ body {
 
 .grid-item input {
     margin-top: 5vh;
-    width: 110px;
-    height: 110px; 
+    width: 100%;
+    height: 100%; 
     border: 4px solid #ddddddc7; 
     border-radius: 5px; 
     padding: 1vh;
     box-sizing: border-box;
     text-align: center;
     font-size: 3vw;
+    color: #222;
 }
 
 .dark-theme .grid-item input {
-    background-color: #727272;
-    margin-top: 1vh;
-    width: 110px;
-    height: 110px;
+    background-color: #444;
+    color: #fff;
     border: 4px solid #444444c7;
-    border-radius: 5px;
-    padding: 1vh;
-    box-sizing: border-box;
-    text-align: center;
-    color: white;
-    font-size: 3vw;
 }
 
 .menu {
@@ -181,37 +155,18 @@ body {
     box-sizing: border-box;
 }
 
+.dark-theme .menu {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
 .menu-item {
     margin-bottom: 1vh;
     cursor: pointer;
 }
 
-.dark-theme {
-    background-color: #222;
+.dark-theme .menu-item {
     color: #fff;
-}
-
-.dark-theme .grid-item {
-    background-color: #222;
-    color: #fff;
-    border-color: #444;
-}
-
-.dark-theme .modal-content,
-.dark-theme .menu {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-theme .modal-content input,
-.dark-theme .menu input {
-    background-color: #444;
-    color: #fff;
-}
-
-.dark-theme .modal-content input::placeholder,
-.dark-theme .menu input::placeholder {
-    color: #aaa;
 }
 
 .help-modal {
@@ -230,8 +185,15 @@ body {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-  }
-  
+}
+
+.modal-content img {
+    max-width: 80%; /* adjust as necessary */
+    max-height: 80%; /* adjust as necessary */
+    display: block;
+    margin: 0 auto; /* center the image */
+}
+
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -239,19 +201,33 @@ body {
     border: 1px solid #888;
     width: 80%;
 }
-  
+
+.dark-theme .modal-content {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
 .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-  
+
+.dark-theme .close {
+    color: #fff;
+}
+
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.dark-theme .close:hover,
+.dark-theme .close:focus {
+    color: #fff;
 }
 
 nav {
@@ -266,10 +242,14 @@ nav {
     padding: 2 0vh;
     border-bottom: 1px solid #ddd;
     box-sizing: border-box;
+    background-color: #FAF9F6;
+    color: #222;
 }
 
-nav .title {
-    font-size: 1.5em;
+.dark-theme nav {
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
 }
 
 .nav-container {
@@ -279,33 +259,18 @@ nav .title {
     padding: 0 10px;
 }
 
-.nav-right {
-    display: flex;
-    gap: 10px;
-}
-
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1vh;
-}
-
 .icon {
     width: 35px;
     height: 35px;
-}
-
-.icon {
     color: #222;
-}
-
-.icon:hover {
-    cursor: pointer;
 }
 
 .dark-theme .icon {
     color: #fff;
+}
+
+.icon:hover {
+    cursor: pointer;
 }
 
 input[type="number"]::-webkit-inner-spin-button, 
@@ -314,19 +279,18 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-input[type="number"] {
-    -moz-appearance:textfield;
-}
-
-.icon {
-    color: #444;
+.dark-theme input[type="number"] {
+    background-color: #444;
+    color: #fff;
 }
 
 .img-alt-text {
     text-align: center;
     margin-top: 10px;
+    color: #222;
 }
 
 .dark-theme .img-alt-text {
-    color: white;
+    color: #fff;
 }
+

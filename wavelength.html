@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <!-- The Modal -->
     <div id="myModal" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-feather="x-circle"></span>
         <h1 class="help-modal">HOW TO PLAY</h1>
             <h2><li class="help-modal">There are 5 images at the top of the screen, each one has been assigned a value 1-20</li></h2>
             <h2><li class="help-modal">1 being one of the best things in all history of things, 20 being one of the worst.</li></h2>
@@ -22,17 +20,24 @@
         </div>
     </div>
     
-    <!-- Add this anywhere within the body, usually near the end -->
     <div id="stats-modal" class="modal">
         <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-feather="x-circle"></span>
         <h2>Stats</h2>
         <p id="attempts">Coming Soon</p>
         </div>
     </div>
-  
+    
+    <div id="imgModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" data-feather="x-circle"></span>
+            <img id="modalImage" src="" alt="Modal Image">
+        </div>
+    </div>
+
     <nav>
-        <div class="title">Wavelength</div> <!-- Added title -->
+        <div class="title">Wavelength</div>
         <div class="nav-right">
             <i id="theme-icon" data-feather="moon" class="icon" onclick="toggleTheme()"></i>
             <i id="stats-icon" data-feather="bar-chart-2" class="icon" onclick="openStatsModal()"></i>
@@ -43,10 +48,8 @@
     <div class="grid-container">
         <div class="row">
             <div class="cell">
-                <div class="cell-inner">
-                    <img src="./images/burger.jpg" alt="Burger">
-                    <p class="img-alt-text">Burger</p>  
-                </div>
+                <img src="./images/burger.jpg" alt="Burger">
+                <p class="img-alt-text">Burger</p>  
             </div>
             <div class="cell">
                 <img src="./images/HW.jpg" alt="Homework">

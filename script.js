@@ -1,7 +1,6 @@
 function toggleTheme() {
     var body = document.body;
     var themeIcon = document.getElementById("theme-icon");
-    var logoImg = document.querySelector(".logo");
     body.classList.toggle("dark-theme");
     if (body.classList.contains("dark-theme")) {
         themeIcon.setAttribute('data-feather', 'sun');
@@ -11,9 +10,10 @@ function toggleTheme() {
     feather.replace();
 }
 
-// Get modal element
+// Get modal elements
 var helpModal = document.getElementById('myModal');
 var statsModal = document.getElementById('stats-modal');
+var imgModal = document.getElementById('imgModal');
 
 // Open the help modal
 function openHelpModal() {
@@ -25,25 +25,25 @@ function openStatsModal() {
     statsModal.style.display = "block";
 }
 
-// Get the <span> element that closes the modal
-var helpSpan = document.getElementsByClassName("close")[0];
-var statsSpan = document.getElementsByClassName("close")[1];
+// Get all the close buttons
+var closeButtons = document.querySelectorAll(".close");
 
-// When the user clicks on <span> (x), close the modal
-helpSpan.onclick = function() {
-    helpModal.style.display = "none";
-}
-
-statsSpan.onclick = function() {
-    statsModal.style.display = "none";
-}
+// Assign the onclick event to each close button
+closeButtons.forEach(function(closeButton) {
+    closeButton.onclick = function() { 
+        console.log('Close button clicked'); // Log a message when a close button is clicked
+        helpModal.style.display = "none";
+        statsModal.style.display = "none";
+        imgModal.style.display = "none";
+    }
+});
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == helpModal) {
+    if (event.target == helpModal || event.target == statsModal || event.target == imgModal) {
         helpModal.style.display = "none";
-    } else if (event.target == statsModal) {
         statsModal.style.display = "none";
+        imgModal.style.display = "none";
     }
 }
 
@@ -117,8 +117,24 @@ function handleInput(rowIndex, cellIndex, e) {
     }
 }
 
+window.onload = function() {
+    var closeButtons = document.querySelectorAll(".close");
 
+    closeButtons.forEach(function(closeButton) {
+        closeButton.onclick = function() { 
+            console.log('Close button clicked');
+            helpModal.style.display = "none";
+            statsModal.style.display = "none";
+            imgModal.style.display = "none";
+        }
+    });
 
-
-
-
+    var modalImg = document.getElementById("modalImage");
+    var images = document.querySelectorAll(".cell img");
+    images.forEach(function(img) {
+        img.onclick = function(){
+            imgModal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    })
+}
