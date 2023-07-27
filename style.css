@@ -17,8 +17,8 @@ body {
 .grid-container {
     display: flex;
     flex-direction: column;
-    width: 37em;
-    height: 90%;
+    width: 35%; /* Adjust to your preference */
+    height: 90%; /* Adjust to your preference */
     box-sizing: border-box;
 }
 
